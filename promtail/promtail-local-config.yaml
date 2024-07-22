@@ -36,3 +36,39 @@ scrape_configs:
       job: gunicorn
       __path__: /var/log/gunicorn/*log
       server_name: 
+
+- job_name: journal-log
+  static_configs:
+  - targets:
+      - localhost
+    labels:
+      job: journal
+      __path__: /var/log/journal/*log
+      server_name: 
+      
+- job_name: nginx-log
+  static_configs:
+  - targets:
+      - localhost
+    labels:
+      job: nginx
+      __path__: /var/log/nginx/*log
+      server_name: 
+
+- job_name: redis-log
+  static_configs:
+  - targets:
+      - localhost
+    labels:
+      job: redis
+      __path__: /var/log/redis/*log
+      server_name: 
+
+- job_name: supervisor-log
+  static_configs:
+  - targets:
+      - localhost
+    labels:
+      job: supervisor
+      __path__: /var/log/supervisor/*log
+      server_name: 
