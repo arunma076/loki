@@ -6,7 +6,7 @@ positions:
   filename: /data/loki/positions.yaml
 
 clients:
-  - url: http://172.31.9.248:3100/loki/api/v1/push
+  - url: http://172.31.5.229:3100/loki/api/v1/push
 
 
 scrape_configs:
@@ -17,7 +17,7 @@ scrape_configs:
     labels:
       job: var-logs
       __path__: /var/log/*log
-      server_name: 
+      server_name: prometheus-server
 
 - job_name: app-log
   static_configs:
@@ -26,7 +26,7 @@ scrape_configs:
     labels:
       job: applogs
       __path__: /srv/applogs/*log
-      server_name: 
+      server_name: prometheus-server
 
 - job_name: gunicorn-log
   static_configs:
@@ -35,7 +35,7 @@ scrape_configs:
     labels:
       job: gunicorn
       __path__: /var/log/gunicorn/*log
-      server_name: 
+      server_name: prometheus-server
 
 - job_name: journal-log
   static_configs:
@@ -44,7 +44,7 @@ scrape_configs:
     labels:
       job: journal
       __path__: /var/log/journal/*log
-      server_name: 
+      server_name: prometheus-server
       
 - job_name: nginx-log
   static_configs:
@@ -53,7 +53,7 @@ scrape_configs:
     labels:
       job: nginx
       __path__: /var/log/nginx/*log
-      server_name: 
+      server_name: prometheus-server
 
 - job_name: redis-log
   static_configs:
@@ -62,7 +62,7 @@ scrape_configs:
     labels:
       job: redis
       __path__: /var/log/redis/*log
-      server_name: 
+      server_name: prometheus-server
 
 - job_name: supervisor-log
   static_configs:
@@ -71,4 +71,4 @@ scrape_configs:
     labels:
       job: supervisor
       __path__: /var/log/supervisor/*log
-      server_name: 
+      server_name: prometheus-server
