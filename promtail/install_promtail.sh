@@ -3,6 +3,7 @@
 set -e  # Exit immediately if a command exits with a non-zero status.
 
 sudo systemctl stop promtail.service
+sudo rm -rf /usr/local/bin/promtail
 
 wget https://github.com/grafana/loki/releases/download/v2.7.2/promtail-linux-amd64.zip
 unzip promtail-linux-amd64.zip
