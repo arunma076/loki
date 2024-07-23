@@ -7,6 +7,7 @@ unzip promtail-linux-amd64.zip
 sudo mv promtail-linux-amd64 /usr/local/bin/promtail
 sudo chmod +x /usr/local/bin/promtail
 
+sudo mkdir -p /data/loki
 sudo mkdir -p /etc/promtail/
 sudo mv promtail-local-config.yaml /etc/promtail/
 
